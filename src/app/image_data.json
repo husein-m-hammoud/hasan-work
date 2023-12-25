@@ -1,0 +1,19 @@
+{
+
+    "br": {
+        "before": [
+            { src: "/images/br_before_1.jpeg" },
+            { src: "/images/br_before_2.jpeg" },
+            { src: "/images/br_before_3.jpeg" },
+            { src: "./images/br_before_4.jpeg" }
+        ],
+        "after": [
+            { src: "/images/br_after_1.jpeg" },
+            { src: "/images/br_after_2.jpeg" },
+            { src: "/images/br_after_3.jpeg" },
+            { src: "/images/br_after_4.jpeg" },
+            { src: "/images/br_after_5.jpeg" }
+        ]
+    }
+
+}

@@ -65,7 +65,7 @@ export default function Home() {
   //const data:any= imagesData;
   console.log(imagesData);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col md:items-center justify-between md:p-24">
       <ul className="gallery">
         {imagesData.map((item: any, index: number) => {
           var title: any = Object.keys(imagesData[index]);

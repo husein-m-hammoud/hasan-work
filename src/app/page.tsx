@@ -11,54 +11,15 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const [slider, setSlider] = useState([]);
 
-  const imagesData: any = [
-    {
-      br: {
-        before: [
-          { src: "/images/br_before_1.jpeg" },
-          { src: "/images/br_before_2.jpeg" },
-          { src: "/images/br_before_3.jpeg" },
-          { src: "./images/br_before_4.jpeg" },
-        ],
-        after: [
-          { src: "/images/br_after_1.jpeg" },
-          { src: "/images/br_after_2.jpeg" },
-          { src: "/images/br_after_3.jpeg" },
-          { src: "/images/br_after_4.jpeg" },
-          { src: "/images/br_after_5.jpeg" },
-        ],
-      },
-    },
-    {
-      door: {
-        before: [{ src: "/images/door_before_1.jpeg" }],
-        after: [
-          { src: "/images/door_after_1.jpeg" },
-          { src: "/images/door_after_2.jpeg" },
-        ],
-      },
-    },
-    {
-      garden: {
-        before: [
-          { src: "/images/garden_before_1.jpeg" },
-          { src: "/images/garden_before_2.jpeg" },
-        ],
-        after: [
-          { src: "/images/garden_after_1.jpeg" },
-          { src: "/images/garden_after_2.jpeg" },
-          { src: "/images/garden_after_3.jpeg" },
-          { src: "/images/garden_after_4.jpeg" },
-          { src: "/images/garden_after_5.jpeg" },
-        ],
-      },
-    },
-  ];
+  
 
   const getSilder = (title: any, action: any, index: number) => {
     console.log(title, action);
     console.log(imagesData[index][title][action]);
-    setSlider(imagesData[index][title][action]);
+    var before = imagesData[index][title]['before']
+    var after = imagesData[index][title]['after']
+    var new_sliders= before.concat(after);
+    setSlider(new_sliders);
     setOpen(true);
   };
   // const file = await fs.readFile(process.cwd() + '/app/image_data.json', 'utf8');
@@ -73,6 +34,7 @@ export default function Home() {
           var after_src: any = item[title].after[0].src;
 
           return (
+            <>
             <li className="before_after">
               <div className="img img--before">
                 <div
@@ -88,9 +50,15 @@ export default function Home() {
                   onClick={() => getSilder(title[0], "after", index)}
                 ></div>
               </div>
-              <div className="content content--before">Before</div>
-              <div className="content content--after">After</div>
+              <div className="content content--before">Vor</div>
+              <div className="content content--after">Nach</div>
+              {/* <div className="content--title"> {title[0]}</div> */}
+             
             </li>
+          
+            
+            </>
+            
           );
           //return(<>{JSON.stringify(item[title].befor[0].src)}</> )
         })}
@@ -100,3 +68,87 @@ export default function Home() {
     </main>
   );
 }
+
+const imagesData: any = [
+  {
+    br2: {
+        before: [
+            { src: "/images/br2_before_1.jpeg" },
+            { src: "/images/br2_before_2.jpeg" },
+            { src: "/images/br2_before_3.jpeg" },
+            { src: "./images/br2_before_4.jpeg" },
+            { src: "./images/br2_before_5.jpeg" },
+            { src: "./images/br2_before_6.jpeg" },
+            { src: "./images/br2_before_7.jpeg" },
+            { src: "./images/br2_before_8.jpeg" },
+        ],
+        after: [
+            { src: "/images/br2_after_1.jpeg" },
+           
+        ]
+    }
+},
+  {
+    br: {
+      before: [
+        { src: "/images/br_before_1.jpeg" },
+        { src: "/images/br_before_2.jpeg" },
+        { src: "/images/br_before_3.jpeg" },
+        { src: "./images/br_before_4.jpeg" },
+        { src: "/images/br_after_2.jpeg" },
+        { src: "/images/br_after_3.jpeg" },
+        { src: "/images/br_after_4.jpeg" },
+      ],
+      after: [
+        { src: "/images/br_after_1.jpeg" },
+       
+        { src: "/images/br_after_5.jpeg" },
+      ],
+    },
+  },
+  {
+    kw: {
+        before: [
+            { src: "/images/kw_before_1.jpeg" },
+            { src: "/images/kw_before_2.jpeg" },
+            { src: "/images/kw_before_3.jpeg" },
+            { src: "./images/kw_before_4.jpeg" },
+            { src: "./images/kw_before_5.jpeg" },
+            { src: "./images/kw_before_6.jpeg" },
+            { src: "./images/kw_before_7.jpeg" },
+            { src: "./images/kw_before_8.jpeg" },
+        ],
+        after: [
+            { src: "/images/kw_after_1.jpeg" },
+
+        ]
+    }
+},
+  {
+    door: {
+      before: [{ src: "/images/door_before_1.jpeg" }],
+      after: [
+        { src: "/images/door_after_1.jpeg" },
+        { src: "/images/door_after_2.jpeg" },
+      ],
+    },
+  },
+  {
+    garden: {
+      before: [
+        { src: "/images/garden_before_2.jpeg" },
+        { src: "/images/garden_before_1.jpeg" },
+        { src: "/images/garden_after_2.jpeg" },
+        { src: "/images/garden_after_3.jpeg" },
+        { src: "/images/garden_after_4.jpeg" },
+        { src: "/images/garden_after_5.jpeg" },
+       
+      ],
+      after: [
+        { src: "/images/garden_after_1.jpeg" },
+       
+      ],
+    },
+  },
+  
+];

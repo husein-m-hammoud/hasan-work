@@ -11,14 +11,12 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const [slider, setSlider] = useState([]);
 
-  
-
   const getSilder = (title: any, action: any, index: number) => {
     console.log(title, action);
     console.log(imagesData[index][title][action]);
-    var before = imagesData[index][title]['before']
-    var after = imagesData[index][title]['after']
-    var new_sliders= before.concat(after);
+    var before = imagesData[index][title]["before"];
+    var after = imagesData[index][title]["after"];
+    var new_sliders = before.concat(after);
     setSlider(new_sliders);
     setOpen(true);
   };
@@ -35,30 +33,26 @@ export default function Home() {
 
           return (
             <>
-            <li className="before_after">
-              <div className="img img--before">
-                <div
-                  className="img__bg"
-                  style={{ backgroundImage: `url(${befor_src})` }}
-                  onClick={() => getSilder(title[0], "before", index)}
-                ></div>
-              </div>
-              <div className="img img--after">
-                <div
-                  className="img__bg"
-                  style={{ backgroundImage: `url(${after_src})` }}
-                  onClick={() => getSilder(title[0], "after", index)}
-                ></div>
-              </div>
-              <div className="content content--before">Vor</div>
-              <div className="content content--after">Nach</div>
-              {/* <div className="content--title"> {title[0]}</div> */}
-             
-            </li>
-          
-            
+              <li className="before_after">
+                <div className="img img--before">
+                  <div
+                    className="img__bg"
+                    style={{ backgroundImage: `url(${befor_src})` }}
+                    onClick={() => getSilder(title[0], "before", index)}
+                  ></div>
+                </div>
+                <div className="img img--after">
+                  <div
+                    className="img__bg"
+                    style={{ backgroundImage: `url(${after_src})` }}
+                    onClick={() => getSilder(title[0], "after", index)}
+                  ></div>
+                </div>
+                <div className="content content--before">Vor</div>
+                <div className="content content--after">Nach</div>
+                {/* <div className="content--title"> {title[0]}</div> */}
+              </li>
             </>
-            
           );
           //return(<>{JSON.stringify(item[title].befor[0].src)}</> )
         })}
@@ -72,58 +66,90 @@ export default function Home() {
 const imagesData: any = [
   {
     br2: {
-        before: [
-            { src: "/images/br2_before_1.jpeg" },
-            { src: "/images/br2_before_2.jpeg" },
-            { src: "/images/br2_before_3.jpeg" },
-            { src: "./images/br2_before_4.jpeg" },
-            { src: "./images/br2_before_5.jpeg" },
-            { src: "./images/br2_before_6.jpeg" },
-            { src: "./images/br2_before_7.jpeg" },
-            { src: "./images/br2_before_8.jpeg" },
-        ],
-        after: [
-            { src: "/images/br2_after_1.jpeg" },
-           
-        ]
-    }
-},
-  {
-    br: {
       before: [
-        { src: "/images/br_before_1.jpeg" },
-        { src: "/images/br_before_2.jpeg" },
-        { src: "/images/br_before_3.jpeg" },
-        { src: "./images/br_before_4.jpeg" },
-        { src: "/images/br_after_2.jpeg" },
-        { src: "/images/br_after_3.jpeg" },
-        { src: "/images/br_after_4.jpeg" },
+        { src: "/images/br2_before_1.jpeg" },
+        { src: "/images/br2_before_2.jpeg" },
+        { src: "/images/br2_before_3.jpeg" },
+        { src: "./images/br2_before_4.jpeg" },
+        { src: "./images/br2_before_5.jpeg" },
+        { src: "./images/br2_before_6.jpeg" },
+        { src: "./images/br2_before_7.jpeg" },
+        { src: "./images/br2_before_8.jpeg" },
       ],
-      after: [
-        { src: "/images/br_after_1.jpeg" },
-       
-        { src: "/images/br_after_5.jpeg" },
-      ],
+      after: [{ src: "/images/br2_after_1.jpeg" }],
     },
   },
   {
-    kw: {
-        before: [
-            { src: "/images/kw_before_1.jpeg" },
-            { src: "/images/kw_before_2.jpeg" },
-            { src: "/images/kw_before_3.jpeg" },
-            { src: "./images/kw_before_4.jpeg" },
-            { src: "./images/kw_before_5.jpeg" },
-            { src: "./images/kw_before_6.jpeg" },
-            { src: "./images/kw_before_7.jpeg" },
-            { src: "./images/kw_before_8.jpeg" },
-        ],
-        after: [
-            { src: "/images/kw_after_1.jpeg" },
+    br3: {
+      before: [
+        { src: "/images/br3_before_1.jpeg" },
+        { src: "/images/br3_before_2.jpeg" },
+        { src: "/images/br3_before_3.jpeg" },
+        { src: "./images/br3_before_4.jpeg" },
+        { src: "./images/br3_before_5.jpeg" },
+      ],
+      after: [{ src: "/images/br3_after_1.jpeg" }],
+    },
+  },
 
-        ]
-    }
-},
+  // {
+  //   br: {
+  //     before: [
+  //       { src: "/images/br_before_1.jpeg" },
+  //       { src: "/images/br_before_2.jpeg" },
+  //       { src: "/images/br_before_3.jpeg" },
+  //       { src: "./images/br_before_4.jpeg" },
+  //       { src: "/images/br_after_2.jpeg" },
+  //       { src: "/images/br_after_3.jpeg" },
+  //       { src: "/images/br_after_4.jpeg" },
+  //     ],
+  //     after: [
+  //       { src: "/images/br_after_1.jpeg" },
+
+  //       { src: "/images/br_after_5.jpeg" },
+  //     ],
+  //   },
+  // },
+  {
+    kw: {
+      before: [
+        { src: "/images/kw_before_1.jpeg" },
+        { src: "/images/kw_before_2.jpeg" },
+        { src: "/images/kw_before_3.jpeg" },
+        { src: "./images/kw_before_4.jpeg" },
+        { src: "./images/kw_before_5.jpeg" },
+        { src: "./images/kw_before_6.jpeg" },
+        { src: "./images/kw_before_7.jpeg" },
+        { src: "./images/kw_before_8.jpeg" },
+      ],
+      after: [{ src: "/images/kw_after_1.jpeg" }],
+    },
+  },
+  {
+    kw2: {
+      before: [
+        { src: "/images/kw2_before_1.jpeg" },
+        { src: "/images/kw2_before_2.jpeg" },
+        { src: "/images/kw2_before_3.jpeg" },
+        { src: "./images/kw2_before_4.jpeg" },
+      ],
+      after: [{ src: "/images/kw2_after_1.jpeg" }],
+    },
+  },
+
+  {
+    garden: {
+      before: [
+        { src: "/images/garden_before_2.jpeg" },
+        { src: "/images/garden_before_1.jpeg" },
+        { src: "/images/garden_after_3.jpeg" },
+        { src: "/images/garden_after_4.jpeg" },
+        { src: "/images/garden_after_5.jpeg" },
+        { src: "/images/garden_after_2.jpeg" },
+      ],
+      after: [{ src: "/images/garden_after_1.jpeg" }],
+    },
+  },
   {
     door: {
       before: [{ src: "/images/door_before_1.jpeg" }],
@@ -133,22 +159,4 @@ const imagesData: any = [
       ],
     },
   },
-  {
-    garden: {
-      before: [
-        { src: "/images/garden_before_2.jpeg" },
-        { src: "/images/garden_before_1.jpeg" },
-        { src: "/images/garden_after_2.jpeg" },
-        { src: "/images/garden_after_3.jpeg" },
-        { src: "/images/garden_after_4.jpeg" },
-        { src: "/images/garden_after_5.jpeg" },
-       
-      ],
-      after: [
-        { src: "/images/garden_after_1.jpeg" },
-       
-      ],
-    },
-  },
-  
 ];

@@ -1,0 +1,15 @@
+{
+    kw2: {
+        before: [
+            { src: "/images/kw2_before_1.jpeg" },
+            { src: "/images/kw2_before_2.jpeg" },
+            { src: "/images/kw2_before_3.jpeg" },
+            { src: "./images/kw2_before_4.jpeg" },
+
+        ],
+        after: [
+            { src: "/images/kw2_after_1.jpeg" },
+
+        ]
+    }
+},
